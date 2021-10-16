@@ -1,0 +1,58 @@
+.padre {
+    width: 350px;
+    height: 350px;
+    background-color: #1a1830;
+}
+
+.hijo {
+    width: 50%;
+    height: 50%;
+    background-color: darkviolet;
+
+    /* animation */
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.hijo:hover {
+    animation-name: rotar;
+    animation-duration: 1s;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+        background-color: red;
+    }
+    25% {
+        transform: translateX(100%);
+        background-color: blue;
+    }
+    50% {
+        transform: translate(100%, 100%);
+        background-color: yellow;
+    }
+    75% {
+        transform: translate(0, 100%);
+        background-color: green;
+    }
+    100% {
+        transform: translateY(0);
+        background-color: orange;
+    }
+}
+

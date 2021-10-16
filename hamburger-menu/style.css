@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu-button {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 6px solid cornflowerblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    background-color: cornflowerblue;
+    width: 60px;
+    height: 6px;
+    border-radius: 20px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+    content: '';
+    display: block;
+    background-color: cornflowerblue;
+    width: 60px;
+    height: 6px;
+    border-radius: 20px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-icon::after {
+    transform: translateY(10px);
+}
+
+.menu-icon::before {
+    transform: translateY(-16px);
+}
+
+.open .menu-icon {
+    background: transparent;
+    transform: translateY(-20px);
+}
+
+.open .menu-icon::after {
+    transform: rotate(45deg) translate(11px, 11px);
+}
+
+.open .menu-icon::before {
+    transform: rotate(-45deg) translate(-15px, 15px);
+}

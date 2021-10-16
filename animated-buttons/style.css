@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #141839;
+    font-family: sans-serif;
+}
+
+.button {
+    min-width: 230px;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/*  Button Border  */
+
+.button-border {
+    position: relative;
+}
+
+.button-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 4px;
+    background-color: #F75762;
+    transition: width .5s ease-in-out;
+}
+
+.button-border:hover::after {
+    width: 100%;
+}
+
+/*  Button Side  */
+
+.button-slide {
+    position: relative;
+    z-index: 1;
+    transition: .5s ease-in-out;
+}
+
+.button-slide:hover {
+    color: #fff;
+}
+
+.button-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: #F75762;
+    transition: .5s ease-in-out;
+}
+
+.button-slide:hover::before {
+    width: 100%;
+}
+
+/*  Button Shadow  */
+.button-shadow {
+    position: relative;
+}
+
+.button-shadow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #F75762; 
+    transition: transform .3s ease-in-out;
+}
+
+.button-shadow:hover::before {
+    transform: translate(10px, 10px);
+}
+
+/*  Button Borders  */
+.button-borders {
+    position: relative;
+    border: 4px solid #fff;
+}
+
+.button-borders::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: 4px solid #F75762;
+    transition: 0.3s ease-in;
+}
+
+.button-borders:hover::before {
+    top: -15px;
+    bottom: -15px;
+    left: -15px;
+    right: -15px;
+}
+
+/* button translate */
+.button-translate {
+    position: relative;
+    border: 4px solid #fff;
+}
+
+.button-translate::before,
+.button-translate::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: 4px #F75762 dotted;
+    transition: transform .3s ease-in-out;
+}
+
+.button-translate:hover::before {
+    transform: translate(15px, 15px);
+}
+
+.button-translate:hover::after {
+    transform: translate(-15px, -15px);
+}
